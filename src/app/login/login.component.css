@@ -1,0 +1,10 @@
+.main-container {
+    background-color: rgb(190, 197, 197);
+    width: 80%;
+    height: 70%;
+}
+
+.login-btn {
+    background-color: rgb(97, 101, 213);
+    border-radius: 3px;
+}

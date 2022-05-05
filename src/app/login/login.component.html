@@ -1,0 +1,19 @@
+<div class="main-container">
+
+    <div class="field">
+        <label for="user-email">Email</label>
+        <input type="email" placeholder="Enter email" id="user-email" [(ngModel)]="email">
+    </div>
+
+    <div>
+        <label for="user-password">Password</label>
+        <input type="password" placeholder="Enter password" id="user-password" [(ngModel)]="password">
+    </div>
+
+    <br>
+    <br>
+    <button class="login-btn" (click)="onLogin()">Login</button>
+    <!-- <a routerLink="/home">Go to home</a> -->
+
+
+</div>
