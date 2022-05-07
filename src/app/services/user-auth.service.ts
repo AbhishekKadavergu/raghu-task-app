@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserAuthService {
-  apiURL="http://localhost:3000"
+  apiURL = "https://task-manager-by-abhi.herokuapp.com"
 
   constructor(private http: HttpClient) { }
 

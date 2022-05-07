@@ -12,7 +12,18 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 import { MatSliderModule } from '@angular/material/slider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+
+
+
+
+
+
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 
 
@@ -21,7 +32,8 @@ import { MatSliderModule } from '@angular/material/slider';
     AppComponent,
     LoginComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +41,10 @@ import { MatSliderModule } from '@angular/material/slider';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatButtonModule,
+    MatTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

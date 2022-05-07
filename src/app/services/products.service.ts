@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class ProductsService {
 
+  apiURL = "https://task-manager-by-abhi.herokuapp.com"
+
   constructor(private http: HttpClient) { }
 
   getProducts(){
@@ -17,8 +19,7 @@ export class ProductsService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
-    })
-  
-    return this.http.get("http://localhost:3000/tasks", { headers: headers }).toPromise()
+    })  
+    return this.http.get<any>(this.apiURL+"/tasks", { headers: headers }).toPromise()
   }
 }

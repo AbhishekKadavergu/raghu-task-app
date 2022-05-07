@@ -1,10 +1,35 @@
-<p>home works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <!-- Position Column -->
+    <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description. </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
 
-<!-- <ul>
-    <li *ngFor="let prod of products">
-        <h3>{{prod.title}}</h3>
-        <p>{{prod.description}}</p>
-    </li>
-</ul> -->
+    <!-- Name Column -->
+    <ng-container matColumnDef="completed">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.completed}} </td>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> Edit </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="onEdit(element._id)">
+                <mat-icon>edit</mat-icon>
+              </button> </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="onDelete()">
+                <mat-icon>delete</mat-icon>
+              </button> </td>
+    </ng-container>
 
-<mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
+<app-edit-task></app-edit-task>
