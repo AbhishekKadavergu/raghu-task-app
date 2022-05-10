@@ -1,0 +1,14 @@
+<div class="create-task">
+    <p class="header-p">
+        Create Task</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="description"></textarea>
+    </mat-form-field>
+
+    <br>
+    <mat-slide-toggle [(ngModel)]="isChecked"> Completed: {{isChecked}}</mat-slide-toggle>
+    <br>
+
+    <button mat-raised-button color="primary" (click)="createTask()">Create</button>
+</div>

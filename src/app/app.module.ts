@@ -13,10 +13,16 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
+
+
 
 
 
@@ -24,6 +30,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { CreateTaskComponent } from './create-task/create-task.component';
 
 
 
@@ -33,7 +40,8 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     LoginComponent,
     PageNotFoundComponent,
     HomeComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    CreateTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -41,10 +49,12 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule,
+    MatSlideToggleModule,
     MatButtonModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
