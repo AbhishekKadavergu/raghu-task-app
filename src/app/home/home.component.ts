@@ -33,10 +33,19 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = [];
   dataSource: any;
 
-  constructor(private ps: ProductsService) { }
+  constructor(private ps: ProductsService) {
+    ps.getCreateTaskSub().subscribe(res=>{
+      this.getTasksToDisplay()
+    })
+   }
 
   ngOnInit(): void {
     // this.getProductsData()
+    this.getTasksToDisplay()
+  
+  }
+
+  getTasksToDisplay(){
     this.ps.getTasks().then(res => {
       console.log(res)
       this.dataSource = res

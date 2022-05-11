@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-edit-task',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditTaskComponent implements OnInit {
 
-  constructor() { }
+  taskCreated:boolean = false
+
+  constructor(private ps: ProductsService) { 
+    ps.getCreateTaskSub().subscribe(res=>{
+      this.taskCreated = res
+    })
+  }
 
   ngOnInit(): void {
   }

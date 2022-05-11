@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,8 @@ import { Injectable } from '@angular/core';
 export class ProductsService {
 
   apiURL = "https://task-manager-by-abhi.herokuapp.com"
+
+  private creatTaskSub = new Subject<boolean>();
 
   constructor(private http: HttpClient) { }
 
@@ -32,4 +35,14 @@ export class ProductsService {
     })  
     return this.http.get<any>(this.apiURL+"/tasks", { headers: headers }).toPromise()
   }
+
+  setCreateTaskSub(created: boolean){
+    this.creatTaskSub.next(created)
+  }
+
+  getCreateTaskSub(): Observable<boolean>{
+    return this.creatTaskSub.asObservable()
+  }
+
+
 }
